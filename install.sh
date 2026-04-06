@@ -16,6 +16,9 @@ PACKAGES=(
     quickshell
     sddm
     stow
+    ttf-jetbrains-mono
+    ttf-jetbrains-mono-nerd
+    otf-font-awesome
 )
 
 # --- install yay if not present ---------------------------
