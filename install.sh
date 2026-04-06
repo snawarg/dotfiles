@@ -19,6 +19,7 @@ PACKAGES=(
     ttf-jetbrains-mono
     ttf-jetbrains-mono-nerd
     otf-font-awesome
+    awww
 )
 
 # --- install yay if not present ---------------------------
