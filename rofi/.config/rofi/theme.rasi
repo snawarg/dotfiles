@@ -1,0 +1,71 @@
+* {
+    bg:		#0e0e0e;
+    bg-alt:	#1a1a1a;
+    fg:		#e0e0e0;
+    fg-alt:	#666666;
+    accent:	#00ff9f;
+    accent-alt:	#bf5fff;
+
+    background-color:	transparent;
+    text-color:		@fg;
+    font:		"Geist 13";
+}
+
+window {
+    background-color:	@bg;
+    border:		1px;
+    border-color:	@accent;
+    border-radius:	8px;
+}
+
+mainbox {
+    background-color:	@bg;
+    padding:		12px;
+    spacing:		8px;
+}
+
+inputbar {
+    background-color:	@bg-alt;
+    border:		1px;
+    border-color:	@accent-alt;
+    border-radius:	6px;
+    padding:		8px 12px;
+    spacing:		8px;
+    text-color:		@fg;
+}
+
+entry {
+    background-color:	transparent;
+    text-color:		@fg;
+    placeholder-color:	@fg-alt;
+}
+
+listview {
+    background-color:	transparent;
+    spacing:		4px;
+    cycle:		true;
+    dynamic:		true;
+    scrollbar:		false;
+}
+
+element {
+    background-color:	transparent;
+    border-radius:	6px;
+    padding:		8px 12px;
+    spacing:		8px;
+}
+
+element selected {
+    background-color:	@bg-alt;
+    text-color:		@accent;
+}
+
+element-text {
+    background-color:	transparent;
+    text-color:		inherit;
+}
+
+element-icon {
+    size:		24px;
+    background-color:	transparent;
+}

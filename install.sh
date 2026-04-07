@@ -12,7 +12,7 @@ PACKAGES=(
     qt5-wayland
     qt6-wayland
     kitty
-    wofi
+    rofi-wayland
     quickshell
     sddm
     stow

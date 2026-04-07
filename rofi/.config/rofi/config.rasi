@@ -1,0 +1,11 @@
+configuration {
+    modi:		"drun";
+    font:		"Geist 13";
+    show-icons:		true;
+    drun-display-format: "{name}";
+    location:		0;
+    disable-history:	false;
+    hide-scrollbar:	true;
+}
+
+@theme "~/.config/rofi/theme.rasi"
