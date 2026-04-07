@@ -21,6 +21,7 @@ PACKAGES=(
     otf-font-awesome
     awww
     zsh
+    playerctl
 )
 
 # --- install yay if not present ---------------------------
