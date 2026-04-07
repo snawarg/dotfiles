@@ -20,6 +20,7 @@ PACKAGES=(
     ttf-jetbrains-mono-nerd
     otf-font-awesome
     awww
+    zsh
 )
 
 # --- install yay if not present ---------------------------
@@ -33,6 +34,19 @@ fi
 
 # --- install packages -------------------------------------
 yay -S --noconfim "${PACKAGES[@]}"
+
+# --- zsh --------------------------------------------------
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# default shell
+chsh -s $(which zsh)
 
 # --- enable services --------------------------------------
 sudo systemctl enable sddm
