@@ -22,6 +22,7 @@ PACKAGES=(
     awww
     zsh
     playerctl
+    wlogout
 )
 
 # --- install yay if not present ---------------------------
