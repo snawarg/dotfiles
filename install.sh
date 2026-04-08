@@ -23,6 +23,7 @@ PACKAGES=(
     zsh
     playerctl
     wlogout
+    swaync
 )
 
 # --- install yay if not present ---------------------------
