@@ -1,0 +1,12 @@
+hl.config({
+    general = {
+        gaps_in             = 4,
+        gaps_out            = 8,
+        border_size         = 1,
+        layout              = "dwindle",
+        col = {
+            active_border   = "rgb(00ff9f)",
+            inactive_border = "rgb(2a2a2a)",
+        },
+    }
+})
