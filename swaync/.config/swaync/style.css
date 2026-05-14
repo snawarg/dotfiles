@@ -1,0 +1,98 @@
+@define-color bg		#0e0e0e;
+@define-color bg-alt		#1a1a1a;
+@define-color overlay		#2a2a2a;
+@define-color fg		#e0e0e0;
+@define-color fg-muted		#666666;
+@define-color accent		#00ff9f;
+@define color accent-alt	#bf5fff;
+
+* {
+    font-family: "Geist", "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    transition: none;
+}
+
+.notification {
+    background-color: @bg;
+    border: 1px solid @accent;
+    border-radius: 0px 12px;
+    corner-shape: bevel;
+    padding: 12px;
+    margin: 4px;
+    box-shadow: 0 0 10px rgba(0, 255, 159, 0.15);
+}
+
+.notification-content {
+    background: transparent;
+}
+
+.notification-default-action {
+    background: transparent;
+}
+
+.notification-default-action:hover {
+    background-color: @bg-alt;
+}
+
+.summary {
+    color: @accent;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.body {
+    color: @fg;
+    font-size: 13px;
+}
+
+.time {
+    color: @fg-muted;
+    font-size: 11px;
+}
+
+.close-button {
+    background-color: transparent;
+    color: @fg-muted;
+    border-radius: 0px 6px;
+    border: 1px solid @overlay;
+    padding: 4px 12px;
+    font-size: 11px;
+}
+
+.close-button:hover {
+    background-color: @bg-alt;
+    color: @accent;
+    border-color: @accent;
+}
+
+.control-center {
+    background-color: rgba(14, 14, 14, 0.8);
+    border: 1px solid @accent;
+    border-radius: 0px 12px;
+    padding: 8px;
+    margin: 8px;
+    box-shadow: 0 0 20px rgba(191, 95, 255, 0.8);
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.blank-window {
+    background: transparent;
+}
+
+.notification-group {
+    background: none;
+}
+
+.notification-group .notification-group-close-button .close-button {
+    background: transparent;
+    color: @accent;
+    border: 1px solid @accent;
+}
+
+.notification-group-close-button:hover {
+    background: @accent;
+    color: @fg;
+}
