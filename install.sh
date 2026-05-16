@@ -26,6 +26,11 @@ PACKAGES=(
     swaync
 )
 
+# --- system prep ------------------------------------------
+sudo pacman -Syu --noconfirm
+sudo pacman -S --noconfirm ca-certificates
+sudo update-ca-trust
+
 # --- install yay if not present ---------------------------
 if ! command -v yay &>/dev/null; then
     echo "Installing yay..."
@@ -36,7 +41,7 @@ if ! command -v yay &>/dev/null; then
 fi
 
 # --- install packages -------------------------------------
-yay -S --noconfim "${PACKAGES[@]}"
+yay -S --noconfirm "${PACKAGES[@]}"
 
 # --- zsh --------------------------------------------------
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -55,7 +60,21 @@ chsh -s $(which zsh)
 sudo systemctl enable sddm
 
 # --- stow dotfiles ----------------------------------------
-cd "$(dirname "$0")"
-stow hyprland
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "Donw. Reboot and log in via SDDM."
+stow --dir="$DOTFILES_DIR" --target="$HOME" hyprland
+stow --dir="$DOTFILES_DIR" --target="$HOME" kitty
+stow --dir="$DOTFILES_DIR" --target="$HOME" rofi
+stow --dir="$DOTFILES_DIR" --target="$HOME" swaync
+stow --dir="$DOTFILES_DIR" --target="$HOME" wallpapers
+
+# Replacing some generated files
+rm -f "$HOME/.zshrc"
+stow --dir="$DOTFILES_DIR" --target="$HOME" zsh
+
+# --- done --------------------------------------------------
+echo "Done. Reboot to start SDDM and apply everything."
+read -rp "Reboot now? [y/N] " response
+if [[ "$response" =~ ^[Yy]$ ]]; then
+    sudo reboot
+fi
