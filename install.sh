@@ -26,6 +26,23 @@ PACKAGES=(
     swaync
 )
 
+# --- check hyprland environment ---------------------------
+if ! command -v pacman &>/dev/null; then
+  echo "This script requires an Arch-based distribution. Exiting."
+  exit 1
+fi
+
+if ! pacman -Q hyprland &>/dev/null; then
+  echo "This script is meant to work with Hyprland."
+  read -rp "Do you want to install it? [y/N] " response
+  if [[ "$response" =~ ^[Yy]$ ]]; then
+    sudo pacman -S --noconfirm hyprland xdg-desktop-portal-hyprland
+  else
+    echo "Exiting."
+    exit 1
+  fi
+fi
+
 # --- system prep ------------------------------------------
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm ca-certificates
