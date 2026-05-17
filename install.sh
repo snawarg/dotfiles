@@ -4,6 +4,8 @@
 
 set -euo pipefail
 
+DOTFILES_DIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && pwd)"
+
 # --- packages ---------------------------------------------
 PACKAGES=(
     hyprland
@@ -77,8 +79,6 @@ chsh -s $(which zsh)
 sudo systemctl enable sddm
 
 # --- stow dotfiles ----------------------------------------
-DOTFILES_DIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && pwd)"
-
 stow --dir="$DOTFILES_DIR" --target="$HOME" hyprland
 stow --dir="$DOTFILES_DIR" --target="$HOME" kitty
 stow --dir="$DOTFILES_DIR" --target="$HOME" rofi
