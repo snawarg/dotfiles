@@ -1,0 +1,6 @@
+module Modules
+Bar 1.0 Bar.qml
+Workspaces 1.0 Workspaces.qml
+ActiveWindow 1.0 ActiveWindow.qml
+Clock 1.0 Clock.qml
+SystemInfo 1.0 SystemInfo.qml

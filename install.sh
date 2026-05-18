@@ -15,7 +15,7 @@ PACKAGES=(
     qt6-wayland
     kitty
     rofi-wayland
-    quickshell
+    quickshell-git
     sddm
     stow
     ttf-jetbrains-mono
@@ -84,6 +84,8 @@ stow --dir="$DOTFILES_DIR" --target="$HOME" kitty
 stow --dir="$DOTFILES_DIR" --target="$HOME" rofi
 stow --dir="$DOTFILES_DIR" --target="$HOME" swaync
 stow --dir="$DOTFILES_DIR" --target="$HOME" wallpapers
+stow --dir="$DOTFILES_DIR" --target="$HOME" theme
+stow --dir="$DOTFILES_DIR" --target="$HOME" quickshell
 
 # Replacing some generated files
 rm -f "$HOME/.zshrc"
